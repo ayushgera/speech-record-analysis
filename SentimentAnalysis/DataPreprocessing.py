@@ -12,5 +12,3 @@ for file in os.listdir(os.chdir(filePath)):
         content = (regex.sub(REPLACE_WITH_NO_SPACE, "", fileContents.readline()).lower())
         if len(content) != 0:
             trainDataReview.append(content)
-
-print(trainDataReview)
