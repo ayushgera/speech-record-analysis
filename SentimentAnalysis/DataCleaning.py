@@ -8,11 +8,13 @@ trainDataReviewPositive = []
 trainingDataReviewPreprocessed={}
 
 def getPreProcessedData():
-    filePathPositiveReviews = os.path.abspath("../../Dataset/SentimentAnalysis/train/Coding/pos")
-    filePathNegtiveReviews = os.path.abspath("../../Dataset/SentimentAnalysis/train/Coding/neg")
+    trainingData = []
+    filePathPositiveReviews = os.path.abspath("../../Dataset/SentimentAnalysis/train/pos")
+    filePathNegtiveReviews = os.path.abspath("../../Dataset/SentimentAnalysis/train/neg")
     trainingDataReviewPreprocessed["trainedPositiveReview"] = preProcessingData(filePathPositiveReviews)
     trainingDataReviewPreprocessed["trainedNegativeReview"] = preProcessingData(filePathNegtiveReviews)
-    return trainingDataReviewPreprocessed
+    trainingData = trainingDataReviewPreprocessed["trainedPositiveReview"] + trainingDataReviewPreprocessed["trainedNegativeReview"]
+    return trainingData
 
 def preProcessingData(filePath):
     trainDataReview =[]
